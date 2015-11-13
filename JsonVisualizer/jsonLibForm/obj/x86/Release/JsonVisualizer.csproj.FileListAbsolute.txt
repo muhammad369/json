@@ -1,0 +1,7 @@
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\bin\Release\jsonLibForm.exe
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\bin\Release\jsonLibForm.pdb
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\obj\x86\Release\JsonVisualizer.Form1.resources
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\obj\x86\Release\JsonVisualizer.Properties.Resources.resources
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\obj\x86\Release\JsonVisualizer.csproj.GenerateResource.Cache
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\obj\x86\Release\jsonLibForm.exe
+F:\Work\My Projects\Libs and Tools\JsonVisualizer\jsonLibForm\obj\x86\Release\jsonLibForm.pdb
