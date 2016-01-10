@@ -10,3 +10,8 @@ F:\Work\github\JsonVisualizer\jsonLibForm\obj\x86\Debug\jsonLibForm.pdb
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.Form1.resources
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.Properties.Resources.resources
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.csproj.GenerateResource.Cache
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\jsonLibForm.exe
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\jsonLibForm.pdb
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\jsonLibForm.exe
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\jsonLibForm.pdb
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.csprojResolveAssemblyReference.cache

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Json;
+using System.Diagnostics;
 
 namespace JsonVisualizer
 {
@@ -88,6 +89,11 @@ namespace JsonVisualizer
             {
                 currentNodeCol.Add(nv.name+" : "+ nv.value.Render());
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://eg.linkedin.com/pub/mohamed-selim/41/a36/b20");
         }
 
        

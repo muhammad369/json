@@ -127,6 +127,59 @@ namespace Json
 			return (JsonArray)getValue(index);
 		}
 
+		/// <summary>
+		/// gets a double[] of all elements, all elements must be of type JsonNumber
+		/// </summary>
+		public double[] getAllDoubles()
+		{
+			double[] tmp= new double[this.Length];
+			for (int i = 0; i < Length; i++)
+			{
+				tmp[i] = getDouble(i);
+			}
+			return tmp;
+		}
+
+		/// <summary>
+		/// gets an int[] of all elements, all elements must be of type JsonNumber
+		/// </summary>
+		public int[] getAllInts()
+		{
+			int[] tmp = new int[this.Length];
+			for (int i = 0; i < Length; i++)
+			{
+				tmp[i] = getInt(i);
+			}
+			return tmp;
+		}
+
+		/// <summary>
+		/// gets a bool[] of all elements, all elements must be of type JsonBoolean
+		/// </summary>
+		public bool[] getAllBools()
+		{
+			bool[] tmp = new bool[this.Length];
+			for (int i = 0; i < Length; i++)
+			{
+				tmp[i] = getBool(i);
+			}
+			return tmp;
+		}
+
+		/// <summary>
+		/// gets a string[] of all elements, all elements must be of type JsonString
+		/// </summary>
+		public string[] getAllStrings()
+		{
+			string[] tmp = new string[this.Length];
+			for (int i = 0; i < Length; i++)
+			{
+				tmp[i] = getString(i);
+			}
+			return tmp;
+		}
+
+
         public override string Render()
         {
             StringBuilder sb = new StringBuilder();

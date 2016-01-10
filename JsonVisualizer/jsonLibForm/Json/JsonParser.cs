@@ -17,7 +17,7 @@ namespace Json
         Stack<JsonValue> stack = new Stack<JsonValue>();
         string tmp_name="";
 
-        public static JsonParser()
+        static JsonParser()
         {
             pattern ="("+ string_pattern + "|" +number_pattern +"|{|}|\\[|\\]|\\:|,|true|false|null" + ")"; 
         }
@@ -44,6 +44,15 @@ namespace Json
                         {
                             state = 2;
                             tmp_name = token.Value.Trim('"').Replace("\\\"","\"");
+                        }
+                        else if(token.Value == "}")
+                        {
+                            state = 4;
+                            JsonValue jo = stack.Pop();
+                            if (stack.Count == 0)
+                            {
+                                return jo;// (JsonObject)jo;
+                            }
                         }
                         else
                         {
@@ -159,6 +168,15 @@ namespace Json
                             else if (stack.Peek() is JsonArray)
                             {
                                 ((JsonArray)stack.Peek()).add(new JsonNull());
+                            }
+                        }
+                        else if (token.Value == "]")
+                        {
+                            state = 4;
+                            JsonValue jo = stack.Pop();
+                            if (stack.Count == 0)
+                            {
+                                return jo;// (JsonObject)jo;
                             }
                         }
                         else
