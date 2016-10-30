@@ -13,10 +13,11 @@ namespace Json
             this.value = value;
         }
 
-        public override string Render()
-        {
-            return value ? "true" : "false";
-        }
+        
 
-    }
+		public override void render(StringBuilder sb)
+		{
+			sb.Append(value ? "true" : "false");
+		}
+	}
 }

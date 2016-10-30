@@ -13,10 +13,10 @@ namespace Json
             this.value = value;
         }
 
-        public override string Render()
-        {
-            return string.Format("\"{0}\"", value.Replace("\"","\\\""));
-        }
-
-    }
+       
+		public override void render(StringBuilder sb)
+		{
+			sb.AppendFormat("\"{0}\"", value.Replace("\"","\\\""));
+		}
+	}
 }

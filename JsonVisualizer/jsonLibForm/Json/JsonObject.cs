@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Json
 {
-    class JsonObject : JsonValue
+    public class JsonObject : JsonValue
     {
 
         List<NameValue> nameValues = new List<NameValue>();
@@ -31,34 +31,50 @@ namespace Json
 
 		public JsonObject add(string name, JsonValue value)
         {
-            this.nameValues.Add( new NameValue(name, value) );
+			getOrNew(name).value = value;
 			return this;
         }
 
 		public JsonObject add(string name, string value)
         {
+			var nv = getOrNew(name);
+
             if (value != null)
             {
-                this.nameValues.Add(new NameValue(name, new JsonString(value)));
+                nv.value = new JsonString(value);
             }
             else
             {
-                this.nameValues.Add(new NameValue(name, new JsonNull()));
+                nv.value = new JsonNull();
             }
 			return this;
         }
 
 		public JsonObject add(string name, double value)
         {
-            this.nameValues.Add(new NameValue(name, new JsonNumber(value)));
+			getOrNew(name).value =new JsonNumber(value);
 			return this;
         }
 
 		public JsonObject add(string name, bool value)
         {
-            this.nameValues.Add(new NameValue(name, new JsonBoolean(value)));
+			getOrNew(name).value= new JsonBoolean(value);
 			return this;
         }
+
+		/// <summary>
+		/// gets the name-value pair with this name if exists, or adds a new one and return it
+		/// </summary>
+		NameValue getOrNew(string name)
+		{
+			NameValue nv = nameValues.FirstOrDefault(n => n.name == name);
+			if (nv == null)
+			{
+				nv = new NameValue(name);
+				nameValues.Add(nv);
+			}
+			return nv;
+		}
 
         public int Length { get { return nameValues.Count; } }
 
@@ -111,25 +127,31 @@ namespace Json
 			return (JsonArray)getValue(name);
 		}
 
-        public override string Render()
-        {
-            StringBuilder sb = new StringBuilder();
+        
+
+		public override void render(StringBuilder sb)
+		{
             sb.Append("{");
             foreach (NameValue item in this.nameValues)
             {
-                sb.AppendFormat("{0},", item.render());
+				item.render(sb); sb.Append(",");
             }
             sb.Remove(sb.Length - 1, 1);//remove the last comma
-            return sb.Append("}").ToString();
-        }
+			sb.Append("}");
+		}
 
-    }
+	}
 
 
-    struct NameValue
+    public class NameValue
     {
         public string name;
         public JsonValue value;
+
+		public NameValue(string name)
+		{
+			this.name = name;
+		}
 
         public NameValue(string name, JsonValue value)
         {
@@ -162,12 +184,11 @@ namespace Json
             this.value = new JsonNumber(value);
         }
 
-        public string render()
-        {
-            StringBuilder sb = new StringBuilder();
-            return sb.AppendFormat("\"{0}\":{1}", name, value.Render()).ToString();
-            
-        }
 
-    }
+		internal void render(StringBuilder sb)
+		{
+			sb.AppendFormat("\"{0}\":", name);
+			value.render(sb);
+		}
+	}
 }

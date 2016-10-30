@@ -8,9 +8,10 @@ namespace Json
     class JsonNull : JsonValue
     {
 
-        public override string Render()
-        {
-            return "null";
-        }
-    }
+       
+		public override void render(StringBuilder sb)
+		{
+			sb.Append("null");
+		}
+	}
 }

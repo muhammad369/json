@@ -13,9 +13,10 @@ namespace Json
             this.value = value;
         }
 
-        public override string Render()
-        {
-            return value.ToString();
-        }
-    }
+
+		public override void render(StringBuilder sb)
+		{
+			sb.Append(value.ToString());
+		}
+	}
 }

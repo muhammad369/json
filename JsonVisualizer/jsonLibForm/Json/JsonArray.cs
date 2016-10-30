@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Json
 {
-    class JsonArray : JsonValue
+    public class JsonArray : JsonValue
     {
         List<JsonValue> values = new List<JsonValue>();
 
@@ -180,17 +180,15 @@ namespace Json
 		}
 
 
-        public override string Render()
-        {
-            StringBuilder sb = new StringBuilder();
+		public override void render(StringBuilder sb)
+		{
             sb.Append("[");
             foreach (JsonValue item in this.values)
             {
-                sb.AppendFormat("{0},",item.Render());
+				item.render(sb); sb.Append(",");
             }
             sb.Remove(sb.Length - 1, 1);//remove the last comma
-            return sb.Append("]").ToString();
-        }
-
-    }
+            sb.Append("]");
+		}
+	}
 }
