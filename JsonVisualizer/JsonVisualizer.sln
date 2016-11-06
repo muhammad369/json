@@ -3,16 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonVisualizer", "jsonLibForm\JsonVisualizer.csproj", "{3851E053-1D44-4200-9A6F-9A7AD46435BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selim.Json", "Selim.Json\Selim.Json.csproj", "{21C191E8-8B33-435F-825A-102AE32F4859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Debug|x86.ActiveCfg = Debug|x86
 		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Debug|x86.Build.0 = Debug|x86
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Release|Any CPU.ActiveCfg = Release|x86
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Release|x86.ActiveCfg = Release|x86
 		{3851E053-1D44-4200-9A6F-9A7AD46435BA}.Release|x86.Build.0 = Release|x86
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{21C191E8-8B33-435F-825A-102AE32F4859}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

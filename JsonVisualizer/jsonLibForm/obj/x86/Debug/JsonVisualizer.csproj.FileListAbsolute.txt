@@ -12,6 +12,8 @@ F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.Prop
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.csproj.GenerateResource.Cache
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\jsonLibForm.exe
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\jsonLibForm.pdb
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\Selim.Json.dll
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\bin\Debug\Selim.Json.pdb
+F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.csprojResolveAssemblyReference.cache
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\jsonLibForm.exe
 F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\jsonLibForm.pdb
-F:\Work\github\Json\JsonVisualizer\jsonLibForm\obj\x86\Debug\JsonVisualizer.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Json;
+using Selim.Json;
 using System.Diagnostics;
 
 namespace JsonVisualizer
@@ -59,7 +59,7 @@ namespace JsonVisualizer
             }
             else // string , number ,boolean ,null
             {
-                currentNodeCol.Add(jv.Render());
+                currentNodeCol.Add(jv.ToString());
             }
         }
 
@@ -87,7 +87,7 @@ namespace JsonVisualizer
             }
             else // string , number ,boolean ,null
             {
-                currentNodeCol.Add(nv.name+" : "+ nv.value.Render());
+                currentNodeCol.Add(nv.name+" : "+ nv.value.ToString());
             }
         }
 

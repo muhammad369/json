@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Json
+namespace Selim.Json
 {
-    class JsonParser
+    public class JsonParser
     {
         static string string_pattern = "\"\"|\"(.|\n)*?[^\\\\]\""; //matches also empty string
         static string number_pattern = @"[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?";// @"[0-9]+(\.[0-9]+)?";
