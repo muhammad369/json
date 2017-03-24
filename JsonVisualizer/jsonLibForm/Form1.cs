@@ -28,11 +28,12 @@ namespace JsonVisualizer
         private void button2_Click(object sender, EventArgs e)
         {
 
-            JsonValue v = new JsonParser().Parse( textBox1.Text );
-
+            JsonValue v = JsonParser.parse( textBox1.Text );
 
             treeView1.Nodes.Clear();
             addToTheTree(v, treeView1.Nodes );
+            //
+            textBox1.Text = v.render(0);
         }
 
         void addToTheTree(JsonValue jv, TreeNodeCollection currentNodeCol)
@@ -93,7 +94,7 @@ namespace JsonVisualizer
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://eg.linkedin.com/pub/mohamed-selim/41/a36/b20");
+            Process.Start("https://linkedin.com/in/mohamed1selim");
         }
 
        

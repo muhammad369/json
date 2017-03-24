@@ -15,7 +15,7 @@ namespace Selim.Json
 
         
 
-		public override void render(StringBuilder sb)
+		public override void render(StringBuilder sb, int? indents)
 		{
 			sb.Append(value ? "true" : "false");
 		}

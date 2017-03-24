@@ -2,3 +2,4 @@ F:\Work\github\Json\JsonVisualizer\Selim.Json\bin\Debug\Selim.Json.dll
 F:\Work\github\Json\JsonVisualizer\Selim.Json\bin\Debug\Selim.Json.pdb
 F:\Work\github\Json\JsonVisualizer\Selim.Json\obj\Debug\Selim.Json.dll
 F:\Work\github\Json\JsonVisualizer\Selim.Json\obj\Debug\Selim.Json.pdb
+F:\Work\github\Json\JsonVisualizer\Selim.Json\obj\Debug\Selim.Json.csprojResolveAssemblyReference.cache

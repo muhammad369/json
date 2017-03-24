@@ -97,10 +97,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(5, 419);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(5);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(277, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(193, 13);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://eg.linkedin.com/pub/mohamed-selim/41/a36/b20";
+            this.linkLabel1.Text = "https://linkedin.com/in/mohamed1selim";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1

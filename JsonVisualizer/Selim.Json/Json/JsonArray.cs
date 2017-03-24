@@ -180,15 +180,40 @@ namespace Selim.Json
 		}
 
 
-		public override void render(StringBuilder sb)
+		public override void render(StringBuilder sb, int? indents)
 		{
-            sb.Append("[");
-            foreach (JsonValue item in this.values)
+            
+            if (indents != null)
             {
-				item.render(sb); sb.Append(",");
+                //appendMany(sb, indentation, (int)indents); 
+                sb.Append("["); sb.Append("\r\n");
+                for (int i = 0; i < this.values.Count; i++)
+                {
+                    appendMany(sb, indentation, (int)indents + 1); 
+                    values[i].render(sb, indents+1);
+                    if (i < values.Count - 1)
+                    {
+                        sb.AppendLine(",");
+                    }
+                    else
+                    {
+                        sb.AppendLine();
+                    }
+                }
+                appendMany(sb, indentation, (int)indents);
+                sb.Append("]");
             }
-            sb.Remove(sb.Length - 1, 1);//remove the last comma
-            sb.Append("]");
+            else
+            {
+                sb.Append("[");
+                foreach (JsonValue item in this.values)
+                {
+                    item.render(sb); sb.Append(",");
+                }
+                sb.Remove(sb.Length - 1, 1);//remove the last comma
+                sb.Append("]");
+            }
+           
 		}
 	}
 }

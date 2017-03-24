@@ -14,7 +14,7 @@ namespace Selim.Json
         }
 
        
-		public override void render(StringBuilder sb)
+		public override void render(StringBuilder sb, int? indents)
 		{
 			sb.AppendFormat("\"{0}\"", value.Replace("\"","\\\""));
 		}

@@ -129,16 +129,41 @@ namespace Selim.Json
 
         
 
-		public override void render(StringBuilder sb)
-		{
-            sb.Append("{");
-            foreach (NameValue item in this.nameValues)
+		public override void render(StringBuilder sb, int? indents)
+        {
+            
+            if (indents != null)
             {
-				item.render(sb); sb.Append(",");
+                //appendMany(sb, indentation, (int)indents); 
+                sb.Append("{");sb.Append("\r\n");
+                
+                for (int i = 0; i < this.nameValues.Count; i++ )
+                {
+                    appendMany(sb, indentation, (int)indents + 1); 
+                    nameValues[i].render(sb, indents+1);
+                    if (i < nameValues.Count - 1)
+                    {
+                        sb.AppendLine(",");
+                    }
+                    else
+                    {
+                        sb.AppendLine();
+                    }
+                }
+                appendMany(sb, indentation, (int)indents);
+                sb.Append("}");
             }
-            sb.Remove(sb.Length - 1, 1);//remove the last comma
-			sb.Append("}");
-		}
+            else
+            {
+                sb.Append("{");
+                foreach (NameValue item in this.nameValues)
+                {
+                    item.render(sb); sb.Append(",");
+                }
+                sb.Remove(sb.Length - 1, 1);//remove the last comma
+                sb.Append("}");
+            }
+        }
 
 	}
 
@@ -185,10 +210,20 @@ namespace Selim.Json
         }
 
 
-		internal void render(StringBuilder sb)
-		{
+		internal void render(StringBuilder sb, int? indents= null)
+        {
 			sb.AppendFormat("\"{0}\":", name);
-			value.render(sb);
+			value.render(sb, indents);
 		}
+
+
+        private void appendMany(StringBuilder sb, string s, int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                sb.Append(s);
+            }
+        }
+
 	}
 }

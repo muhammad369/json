@@ -22,6 +22,11 @@ namespace Selim.Json
             pattern ="("+ string_pattern + "|" +number_pattern +"|{|}|\\[|\\]|\\:|,|true|false|null" + ")"; 
         }
 
+        public static JsonValue parse(string jsonString)
+        {
+            return new JsonParser().Parse(jsonString);
+        }
+
         public JsonValue Parse(string text)
         {
             foreach(Match token in Regex.Matches(text, pattern))
