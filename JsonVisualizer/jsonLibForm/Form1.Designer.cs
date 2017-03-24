@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copy_name_menu_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.copy_value_menu_item = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -70,6 +75,8 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(300, 408);
             this.treeView1.TabIndex = 3;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // tableLayoutPanel1
             // 
@@ -103,6 +110,31 @@
             this.linkLabel1.Text = "https://linkedin.com/in/mohamed1selim";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copy_name_menu_item,
+            this.copy_value_menu_item});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(113, 48);
+            // 
+            // copy_name_menu_item
+            // 
+            this.copy_name_menu_item.BackColor = System.Drawing.Color.White;
+            this.copy_name_menu_item.Name = "copy_name_menu_item";
+            this.copy_name_menu_item.Size = new System.Drawing.Size(127, 22);
+            this.copy_name_menu_item.Text = "Copy Name";
+            this.copy_name_menu_item.Click += new System.EventHandler(this.copy_name_menu_item_Click);
+            // 
+            // copy_value_menu_item
+            // 
+            this.copy_value_menu_item.Name = "copy_value_menu_item";
+            this.copy_value_menu_item.Size = new System.Drawing.Size(127, 22);
+            this.copy_value_menu_item.Text = "Copy Value";
+            this.copy_value_menu_item.Click += new System.EventHandler(this.copy_value_menu_item_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -114,6 +146,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -125,6 +158,9 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem copy_name_menu_item;
+        private System.Windows.Forms.ToolStripMenuItem copy_value_menu_item;
     }
 }
 

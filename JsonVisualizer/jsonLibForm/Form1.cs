@@ -32,6 +32,7 @@ namespace JsonVisualizer
 
             treeView1.Nodes.Clear();
             addToTheTree(v, treeView1.Nodes );
+            
             //
             textBox1.Text = v.render(0);
         }
@@ -42,6 +43,8 @@ namespace JsonVisualizer
             {
                 JsonObject jo = (JsonObject)jv;
                 TreeNode n=new TreeNode("{}");
+                n.Tag = jo;
+                n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
                 foreach (NameValue nv in jo.getNameVlaues())
                 {
@@ -52,6 +55,8 @@ namespace JsonVisualizer
             {
                 JsonArray ja = (JsonArray)jv;
                 TreeNode n = new TreeNode("[]");
+                n.Tag = ja;
+                n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
                 foreach (JsonValue v in ja.getValues())
                 {
@@ -60,7 +65,10 @@ namespace JsonVisualizer
             }
             else // string , number ,boolean ,null
             {
-                currentNodeCol.Add(jv.ToString());
+                TreeNode n = new TreeNode(jv.ToString());
+                n.Tag = jv;
+                n.ContextMenuStrip = contextMenuStrip1;
+                currentNodeCol.Add(n);
             }
         }
 
@@ -70,6 +78,8 @@ namespace JsonVisualizer
             {
                 JsonObject jo = (JsonObject)nv.value;
                 TreeNode n = new TreeNode(nv.name+" : {}");
+                n.Tag = nv;
+                n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
                 foreach (NameValue nv1 in jo.getNameVlaues())
                 {
@@ -80,6 +90,8 @@ namespace JsonVisualizer
             {
                 JsonArray ja = (JsonArray)nv.value;
                 TreeNode n = new TreeNode(nv.name+" : []");
+                n.Tag = nv;
+                n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
                 foreach (JsonValue v in ja.getValues())
                 {
@@ -88,13 +100,75 @@ namespace JsonVisualizer
             }
             else // string , number ,boolean ,null
             {
-                currentNodeCol.Add(nv.name+" : "+ nv.value.ToString());
+                TreeNode n = new TreeNode(nv.name+" : "+ nv.value.ToString());
+                n.Tag = nv;
+                n.ContextMenuStrip = contextMenuStrip1;
+                currentNodeCol.Add(n);
             }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://linkedin.com/in/mohamed1selim");
+        }
+
+        //============================
+
+        private void copy_name_menu_item_Click(object sender, EventArgs e)
+        {
+            var item= treeView1.SelectedNode.Tag;
+
+            copyName(item);
+        }
+
+
+        private void copy_value_menu_item_Click(object sender, EventArgs e)
+        {
+            var item = treeView1.SelectedNode.Tag;
+
+            copyValue(item);
+        }
+
+
+        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            var item = e.Node.Tag;
+            copyName(item);
+        }
+
+
+
+        void copyName(object o)
+        {
+            if (o is NameValue)
+            {
+                Clipboard.SetText((o as NameValue).name);
+            }
+            else
+            {
+                Clipboard.SetText(" ");
+            }
+        }
+
+        void copyValue(object o)
+        {
+            if (o is NameValue)
+            {
+                Clipboard.SetText((o as NameValue).value.render(0));
+            }
+            else if(o is JsonValue)
+            {
+                Clipboard.SetText((o as JsonValue).render(0));
+            }
+            else
+            {
+                Clipboard.SetText(" ");
+            }
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            treeView1.SelectedNode = e.Node;
         }
 
        

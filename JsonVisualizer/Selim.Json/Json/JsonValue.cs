@@ -21,8 +21,6 @@ namespace Selim.Json
 		/// this is to be called by render(), as an optimization tech, 
 		/// to make sure only one instance of StringBuilder is used across nested or successive elements
 		/// </summary>
-		//public abstract void render(StringBuilder sb);
-
         public abstract void render(StringBuilder sb, int? indents= null);
 
 		/// <summary>
