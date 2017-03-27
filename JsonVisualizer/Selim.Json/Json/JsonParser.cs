@@ -45,7 +45,16 @@ namespace Selim.Json
                     //    }
                     //    break;
                     case 1:
-                        if (Regex.IsMatch(token.Value, string_pattern))
+                        if ( token.Value == "}")
+                        {
+                            state = 4;
+                            JsonValue jo = stack.Pop();
+                            if (stack.Count == 0)
+                            {
+                                return jo;// (JsonObject)jo;
+                            }
+                        }
+                        else if (Regex.IsMatch(token.Value, string_pattern))
                         {
                             state = 2;
                             tmp_name = token.Value.Trim('"').Replace("\\\"","\"");
@@ -66,7 +75,16 @@ namespace Selim.Json
                         }
                         break;
                     case 3:
-                        if ( token.Value == "{")
+                        if (token.Value == "]")
+                        {
+                            state = 4;
+                            JsonValue jo = stack.Pop();
+                            if (stack.Count == 0)
+                            {
+                                return jo;// (JsonObject)jo;
+                            }
+                        }
+                        else if ( token.Value == "{")
                         {
                             state = 1;
                             JsonObject new_object = new JsonObject();
