@@ -104,10 +104,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(5, 419);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(5);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(193, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(208, 13);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://linkedin.com/in/mohamed1selim";
+            this.linkLabel1.Text = "https://github.com/mohamed-selim-a/json";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // contextMenuStrip1
@@ -124,14 +124,14 @@
             // 
             this.copy_name_menu_item.BackColor = System.Drawing.Color.White;
             this.copy_name_menu_item.Name = "copy_name_menu_item";
-            this.copy_name_menu_item.Size = new System.Drawing.Size(127, 22);
+            this.copy_name_menu_item.Size = new System.Drawing.Size(112, 22);
             this.copy_name_menu_item.Text = "Copy Name";
             this.copy_name_menu_item.Click += new System.EventHandler(this.copy_name_menu_item_Click);
             // 
             // copy_value_menu_item
             // 
             this.copy_value_menu_item.Name = "copy_value_menu_item";
-            this.copy_value_menu_item.Size = new System.Drawing.Size(127, 22);
+            this.copy_value_menu_item.Size = new System.Drawing.Size(112, 22);
             this.copy_value_menu_item.Text = "Copy Value";
             this.copy_value_menu_item.Click += new System.EventHandler(this.copy_value_menu_item_Click);
             // 

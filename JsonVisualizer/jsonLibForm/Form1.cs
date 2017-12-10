@@ -42,7 +42,7 @@ namespace JsonVisualizer
             if (jv is JsonObject)
             {
                 JsonObject jo = (JsonObject)jv;
-                TreeNode n=new TreeNode("{}");
+                TreeNode n = new TreeNode("{" + jo.Length + "}");
                 n.Tag = jo;
                 n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
@@ -54,7 +54,7 @@ namespace JsonVisualizer
             else if(jv is JsonArray)
             {
                 JsonArray ja = (JsonArray)jv;
-                TreeNode n = new TreeNode("[]");
+                TreeNode n = new TreeNode("[" + ja.Length + "]");
                 n.Tag = ja;
                 n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
@@ -77,7 +77,7 @@ namespace JsonVisualizer
             if (nv.value is JsonObject)
             {
                 JsonObject jo = (JsonObject)nv.value;
-                TreeNode n = new TreeNode(nv.name+" : {}");
+                TreeNode n = new TreeNode(nv.name+" : {"+ jo.Length +"}");
                 n.Tag = nv;
                 n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
@@ -89,7 +89,7 @@ namespace JsonVisualizer
             else if (nv.value is JsonArray)
             {
                 JsonArray ja = (JsonArray)nv.value;
-                TreeNode n = new TreeNode(nv.name+" : []");
+                TreeNode n = new TreeNode( nv.name+" : ["+ ja.Length +"]");
                 n.Tag = nv;
                 n.ContextMenuStrip = contextMenuStrip1;
                 currentNodeCol.Add(n);
@@ -109,7 +109,7 @@ namespace JsonVisualizer
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://linkedin.com/in/mohamed1selim");
+            Process.Start("https://github.com/mohamed-selim-a/json");
         }
 
         //============================
@@ -140,30 +140,38 @@ namespace JsonVisualizer
 
         void copyName(object o)
         {
-            if (o is NameValue)
+            try
             {
-                Clipboard.SetText((o as NameValue).name);
+                if (o is NameValue)
+                {
+                    Clipboard.SetText((o as NameValue).name);
+                }
+                else
+                {
+                    Clipboard.SetText(" ");
+                }
             }
-            else
-            {
-                Clipboard.SetText(" ");
-            }
+            catch { }
         }
 
         void copyValue(object o)
         {
-            if (o is NameValue)
+            try
             {
-                Clipboard.SetText((o as NameValue).value.render(0));
+                if (o is NameValue)
+                {
+                    Clipboard.SetText((o as NameValue).value.render(0));
+                }
+                else if (o is JsonValue)
+                {
+                    Clipboard.SetText((o as JsonValue).render(0));
+                }
+                else
+                {
+                    Clipboard.SetText(" ");
+                }
             }
-            else if(o is JsonValue)
-            {
-                Clipboard.SetText((o as JsonValue).render(0));
-            }
-            else
-            {
-                Clipboard.SetText(" ");
-            }
+            catch { }
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
