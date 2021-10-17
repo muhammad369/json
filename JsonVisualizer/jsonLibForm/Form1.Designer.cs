@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copy_name_menu_item = new System.Windows.Forms.ToolStripMenuItem();
             this.copy_value_menu_item = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,20 +55,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(113, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 80);
             // 
             // copy_name_menu_item
             // 
             this.copy_name_menu_item.BackColor = System.Drawing.Color.White;
             this.copy_name_menu_item.Name = "copy_name_menu_item";
-            this.copy_name_menu_item.Size = new System.Drawing.Size(112, 22);
+            this.copy_name_menu_item.Size = new System.Drawing.Size(191, 38);
             this.copy_name_menu_item.Text = "Copy Name";
             this.copy_name_menu_item.Click += new System.EventHandler(this.copy_name_menu_item_Click);
             // 
             // copy_value_menu_item
             // 
             this.copy_value_menu_item.Name = "copy_value_menu_item";
-            this.copy_value_menu_item.Size = new System.Drawing.Size(112, 22);
+            this.copy_value_menu_item.Size = new System.Drawing.Size(191, 38);
             this.copy_value_menu_item.Text = "Copy Value";
             this.copy_value_menu_item.Click += new System.EventHandler(this.copy_value_menu_item_Click);
             // 
@@ -146,6 +147,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(838, 539);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Json Visualizer";
             this.Load += new System.EventHandler(this.Form1_Load);
