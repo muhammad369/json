@@ -9,7 +9,7 @@ namespace Selim.Json
     {
 
         public static string indentation = "   ";
-        public string render(int? indent= null)
+        public string toString(int? indent= null)
 		{
 			var sb = new StringBuilder();
             render(sb, indent);
@@ -18,7 +18,7 @@ namespace Selim.Json
 
 
 		/// <summary>
-		/// this is to be called by render(), as an optimization tech, 
+		/// this is to be called by toString(), as an optimization tech, 
 		/// to make sure only one instance of StringBuilder is used across nested or successive elements
 		/// </summary>
         public abstract void render(StringBuilder sb, int? indents= null);
@@ -28,7 +28,7 @@ namespace Selim.Json
 		/// </summary>
 		public override string ToString()
 		{
-			return this.render();
+			return this.toString();
 		}
 
 

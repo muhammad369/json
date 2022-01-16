@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("jsonLibForm")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Json Visualizer")]
+[assembly: AssemblyDescription("visualizes your jsin text on a tree view")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("jsonLibForm")]
+[assembly: AssemblyProduct("Json Visualizer")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

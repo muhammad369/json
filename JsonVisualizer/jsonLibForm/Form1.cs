@@ -13,28 +13,37 @@ namespace JsonVisualizer
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(string text = null)
         {
             InitializeComponent();
+            this.text = text;
         }
 
-       
+        private string text;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if(text != null)
+            {
+                textBox1.Text = text;
+                visualize();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            visualize();
+        }
 
-            JsonValue v = JsonParser.parse( textBox1.Text );
+        private void visualize()
+        {
+            JsonValue v = JsonParser.parse(textBox1.Text);
 
             treeView1.Nodes.Clear();
-            addToTheTree(v, treeView1.Nodes );
-            
+            addToTheTree(v, treeView1.Nodes);
+
             //
-            textBox1.Text = v.render(0);
+            textBox1.Text = v.toString(0);
         }
 
         void addToTheTree(JsonValue jv, TreeNodeCollection currentNodeCol)
@@ -157,11 +166,11 @@ namespace JsonVisualizer
             {
                 if (o is NameValue)
                 {
-                    Clipboard.SetText((o as NameValue).value.render(0));
+                    Clipboard.SetText((o as NameValue).value.toString(0));
                 }
                 else if (o is JsonValue)
                 {
-                    Clipboard.SetText((o as JsonValue).render(0));
+                    Clipboard.SetText((o as JsonValue).toString(0));
                 }
                 else
                 {
